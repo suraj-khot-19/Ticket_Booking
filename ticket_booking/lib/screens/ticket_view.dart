@@ -14,10 +14,11 @@ class TicketView extends StatelessWidget {
 
     return SizedBox(
       width: size.width * 0.80, //80% of width
-      height: 200, //main height for card
+      height: AppLayouts.getHeight(context, 200), //main height for card
       child: Container(
         margin: const EdgeInsets.only(right: 16),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             //1st card
             Container(
@@ -41,7 +42,7 @@ class TicketView extends StatelessWidget {
                           child: Stack(
                         children: [
                           SizedBox(
-                            height: 24,
+                            height: AppLayouts.getHeight(context, 24),
                             child: LayoutBuilder(
                               builder: (BuildContext context,
                                   BoxConstraints constraints) {
@@ -88,7 +89,7 @@ class TicketView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                        width: 100,
+                        width: AppLayouts.getWidth(context, 100),
                         child: Text(
                           ticketList['place1_2'],
                           style: AppStyles.whiteHeading4,
@@ -99,7 +100,7 @@ class TicketView extends StatelessWidget {
                         style: AppStyles.whiteHeading4,
                       ),
                       SizedBox(
-                        width: 100,
+                        width: AppLayouts.getWidth(context, 100),
                         child: Text(
                           ticketList['place2_2'],
                           textAlign: TextAlign.end,
@@ -117,10 +118,10 @@ class TicketView extends StatelessWidget {
               child: Row(
                 children: [
                   //left
-                  const SizedBox(
-                    height: 20,
-                    width: 10,
-                    child: DecoratedBox(
+                  SizedBox(
+                    height: AppLayouts.getHeight(context, 20),
+                    width: AppLayouts.getWidth(context, 10),
+                    child: const DecoratedBox(
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
@@ -142,10 +143,10 @@ class TicketView extends StatelessWidget {
                           mainAxisSize: MainAxisSize.max,
                           children: List.generate(
                               (constraints.constrainWidth() / 15).floor(),
-                              (index) => const SizedBox(
-                                    width: 5,
-                                    height: 1,
-                                    child: DecoratedBox(
+                              (index) => SizedBox(
+                                    height: AppLayouts.getHeight(context, 5),
+                                    width: AppLayouts.getWidth(context, 1),
+                                    child: const DecoratedBox(
                                       decoration:
                                           BoxDecoration(color: Colors.white),
                                     ),
@@ -155,10 +156,10 @@ class TicketView extends StatelessWidget {
                     ),
                   )),
                   //right
-                  const SizedBox(
-                    height: 20,
-                    width: 10,
-                    child: DecoratedBox(
+                  SizedBox(
+                    height: AppLayouts.getHeight(context, 20),
+                    width: AppLayouts.getWidth(context, 10),
+                    child: const DecoratedBox(
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(

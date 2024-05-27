@@ -6,6 +6,8 @@ import 'package:ticket_booking/utils/app_data_list.dart';
 import 'package:ticket_booking/utils/app_style.dart';
 import 'package:ticket_booking/utils/spacer.dart';
 
+import '../utils/app_layouts.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -17,7 +19,9 @@ class HomeScreen extends StatelessWidget {
         children: [
           addVerticleSpace(40),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(
+              horizontal: AppLayouts.getWidth(context, 20),
+            ),
             child: Column(
               children: [
                 Row(

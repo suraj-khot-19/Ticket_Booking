@@ -14,7 +14,7 @@ class HotelView extends StatelessWidget {
       margin: const EdgeInsets.only(right: 17, top: 5),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 17),
       width: size.width * 0.6,
-      height: 350,
+      height: AppLayouts.getHeight(context, 330),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
           boxShadow: [
@@ -29,7 +29,7 @@ class HotelView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 180,
+            height: AppLayouts.getHeight(context, 180),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 image: DecorationImage(
