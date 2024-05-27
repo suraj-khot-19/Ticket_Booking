@@ -1,0 +1,68 @@
+List<Map<String, dynamic>> hotelInfo = [
+  {
+    'name': 'Hotel Ram',
+    'city': 'Pune',
+    'price': 20,
+    'image': 'hotel1.png',
+  },
+  {
+    'name': 'Hotel Sita',
+    'city': 'Banglore',
+    'price': 40,
+    'image': 'hotel2.png',
+  },
+  {
+    'name': 'Hotel Laxman',
+    'city': 'Mumbai',
+    'price': 30,
+    'image': 'hotel3.png',
+  },
+  {
+    'name': 'Hotel Krishn',
+    'city': 'London',
+    'price': 25,
+    'image': 'hotel4.png',
+  },
+];
+List<Map<String, dynamic>> ticketInfo = [
+  {
+    "place1": "DEL",
+    "place2": "BOM",
+    "place1_2": "Delhi",
+    "place2_2": "Mumbai",
+    "duration": "2H 10M",
+    "date": "19 May",
+    "time": "09:00 PM",
+    "planeNumber": 19,
+  },
+  {
+    "place1": "BLR",
+    "place2": "BOM",
+    "place1_2": "Bengluru",
+    "place2_2": "Mumbai",
+    "duration": "6H 10M",
+    "date": "19 May",
+    "time": "09:00 AM",
+    "planeNumber": 10,
+  },
+  {
+    "place1": "PNQ",
+    "place2": "BOM",
+    "place1_2": "Pune",
+    "place2_2": "Mumbai",
+    "duration": "1H 00M",
+    "date": "20 May",
+    "time": "11:00 PM",
+    "planeNumber": 2,
+  },
+  {
+    "place1": "NYC",
+    "place2": "LDN",
+    "place1_2": "New-York",
+    "place2_2": "London",
+    "duration": "9H 10M",
+    "date": "1 May",
+    "time": "09:00 PM",
+    "planeNumber": 29,
+  },
+];

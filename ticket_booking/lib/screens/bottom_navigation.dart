@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_booking/screens/home_screen.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -9,15 +10,15 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int _isSelected = 0;
+  int _isSelectedIndex = 0;
   void changeIndex(int index) {
     setState(() {
-      _isSelected = index;
+      _isSelectedIndex = index;
     });
   }
 
   static const List<Widget> _widgetList = <Widget>[
-    Text("Home"),
+    HomeScreen(),
     Text("Search"),
     Text("Ticket"),
     Text("Profile"),
@@ -26,18 +27,17 @@ class _BottomNavigationState extends State<BottomNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-          child: _widgetList[_isSelected],
+          child: _widgetList[_isSelectedIndex],
         ),
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _isSelected,
+          currentIndex: _isSelectedIndex,
           onTap: changeIndex,
-          elevation: 16,
+          elevation: 10,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.blueGrey,
-          unselectedItemColor: Colors.grey,
-          // backgroundColor: Colors.white30,
+          unselectedItemColor: const Color(0xFF526480),
           items: const [
             BottomNavigationBarItem(
                 icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
