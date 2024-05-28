@@ -23,4 +23,9 @@ class AppStyles {
       fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey.shade500);
   static TextStyle whiteHeading4 = const TextStyle(
       fontSize: 14, fontWeight: FontWeight.w500, color: Colors.white);
+
+  static TextStyle blackHeading3 = const TextStyle(
+      fontSize: 17, fontWeight: FontWeight.w500, color: Colors.black);
+  static TextStyle blackHeading4 = const TextStyle(
+      fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black);
 }

@@ -1,9 +1,10 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:ticket_booking/screens/hotel_view.dart';
-import 'package:ticket_booking/screens/ticket_view.dart';
+import 'package:ticket_booking/screens/view/hotel_view.dart';
+import 'package:ticket_booking/screens/view/ticket_view.dart';
 import 'package:ticket_booking/utils/app_data_list.dart';
 import 'package:ticket_booking/utils/app_style.dart';
+import 'package:ticket_booking/utils/row_text_app.dart';
 import 'package:ticket_booking/utils/spacer.dart';
 
 import '../utils/app_layouts.dart';
@@ -41,8 +42,8 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      height: 50,
-                      width: 80,
+                      height: AppLayouts.getHeight(context, 50),
+                      width: AppLayouts.getWidth(context, 80),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: const DecorationImage(
@@ -76,31 +77,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 addVerticleSpace(40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Upcoming Flights",
-                      style: AppStyles.heading2,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        //function
-                      },
-                      child: Text(
-                        "View all",
-                        style: AppStyles.textStyle
-                            .copyWith(color: AppStyles.primaryColor),
-                      ),
-                    ),
-                  ],
-                ),
+                const AppRowText(text1: 'Upcoming Flights', text2: 'View all'),
               ],
             ),
           ),
           addVerticleSpace(15),
           SingleChildScrollView(
-            padding: EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: 10),
             scrollDirection: Axis.horizontal,
             child: Row(
               children:
@@ -108,27 +91,8 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Hotels",
-                  style: AppStyles.heading2,
-                ),
-                InkWell(
-                  onTap: () {
-                    //function
-                  },
-                  child: Text(
-                    "View all",
-                    style: AppStyles.textStyle
-                        .copyWith(color: AppStyles.primaryColor),
-                  ),
-                ),
-              ],
-            ),
-          ),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const AppRowText(text1: 'Hotels', text2: 'View all')),
           addVerticleSpace(15),
           SingleChildScrollView(
             padding: const EdgeInsets.only(left: 10),

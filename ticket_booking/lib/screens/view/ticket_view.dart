@@ -3,7 +3,7 @@ import 'package:ticket_booking/utils/app_layouts.dart';
 import 'package:ticket_booking/utils/app_style.dart';
 import 'package:ticket_booking/utils/spacer.dart';
 
-import '../widgets/plane_container.dart';
+import '../../widgets/plane_container.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticketList;
@@ -33,11 +33,13 @@ class TicketView extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        ticketList['place1'],
+                        ticketList['from']['code'],
                         style: AppStyles.whiteHeading3,
                       ),
                       const Spacer(),
-                      const PlaneContainer(),
+                      const PlaneContainer(
+                        color: Colors.white,
+                      ),
                       Expanded(
                           child: Stack(
                         children: [
@@ -76,10 +78,12 @@ class TicketView extends StatelessWidget {
                           ),
                         ],
                       )),
-                      const PlaneContainer(),
+                      const PlaneContainer(
+                        color: Colors.white,
+                      ),
                       const Spacer(),
                       Text(
-                        ticketList['place2'],
+                        ticketList['to']['code'],
                         style: AppStyles.whiteHeading3,
                       ),
                     ],
@@ -91,7 +95,7 @@ class TicketView extends StatelessWidget {
                       SizedBox(
                         width: AppLayouts.getWidth(context, 100),
                         child: Text(
-                          ticketList['place1_2'],
+                          ticketList['from']['place'],
                           style: AppStyles.whiteHeading4,
                         ),
                       ),
@@ -102,7 +106,7 @@ class TicketView extends StatelessWidget {
                       SizedBox(
                         width: AppLayouts.getWidth(context, 100),
                         child: Text(
-                          ticketList['place2_2'],
+                          ticketList['to']['place'],
                           textAlign: TextAlign.end,
                           style: AppStyles.whiteHeading4,
                         ),
@@ -185,6 +189,7 @@ class TicketView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         ticketList['date'],
@@ -209,6 +214,7 @@ class TicketView extends StatelessWidget {
                     ],
                   ),
                   Column(
+                    // crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
                         "${ticketList['planeNumber']}",

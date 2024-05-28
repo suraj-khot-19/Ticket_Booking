@@ -1,3 +1,4 @@
+//hotel view
 List<Map<String, dynamic>> hotelInfo = [
   {
     'name': 'Hotel Ram',
@@ -24,45 +25,76 @@ List<Map<String, dynamic>> hotelInfo = [
     'image': 'hotel4.png',
   },
 ];
+//ticket view
 List<Map<String, dynamic>> ticketInfo = [
   {
-    "place1": "DEL",
-    "place2": "BOM",
-    "place1_2": "Delhi",
-    "place2_2": "Mumbai",
+    'from': {
+      'code': "DEL",
+      'place': "Delhi",
+    },
+    'to': {
+      'code': "BOM",
+      'place': "Mumbai",
+    },
     "duration": "2H 10M",
-    "date": "19 May",
+    "date": "16 May",
     "time": "09:00 PM",
-    "planeNumber": 19,
+    "planeNumber": 7,
   },
   {
-    "place1": "BLR",
-    "place2": "BOM",
-    "place1_2": "Bengluru",
-    "place2_2": "Mumbai",
+    'from': {
+      'code': "BLR",
+      'place': "Bengluru",
+    },
+    'to': {
+      'code': "BOM",
+      'place': "Mumbai",
+    },
     "duration": "6H 10M",
     "date": "19 May",
-    "time": "09:00 AM",
-    "planeNumber": 10,
+    "time": "10:00 AM",
+    "planeNumber": 8,
   },
   {
-    "place1": "PNQ",
-    "place2": "BOM",
-    "place1_2": "Pune",
-    "place2_2": "Mumbai",
+    'from': {
+      'code': "PNQ",
+      'place': "Pune",
+    },
+    'to': {
+      'code': "BOM",
+      'place': "Mumbai",
+    },
     "duration": "1H 00M",
     "date": "20 May",
     "time": "11:00 PM",
     "planeNumber": 2,
   },
   {
-    "place1": "NYC",
-    "place2": "LDN",
-    "place1_2": "New-York",
-    "place2_2": "London",
+    'from': {
+      'code': "NYC",
+      'place': "New-York",
+    },
+    'to': {
+      'code': "LDN",
+      'place': "London",
+    },
     "duration": "9H 10M",
-    "date": "1 May",
-    "time": "09:00 PM",
+    "date": "26 May",
+    "time": "12:00 PM",
     "planeNumber": 29,
+  },
+  {
+    'from': {
+      'code': "DEL",
+      'place': "Delhi",
+    },
+    'to': {
+      'code': "BOM",
+      'place': "Mumbai",
+    },
+    "duration": "2H 10M",
+    "date": "28 May",
+    "time": "19:50 PM",
+    "planeNumber": 19,
   },
 ];

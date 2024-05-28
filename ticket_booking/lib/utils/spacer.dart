@@ -8,6 +8,6 @@ Widget addVerticleSpace(double height) {
 
 Widget addHorizontalSpace(double width) {
   return SizedBox(
-    height: width,
+    width: width,
   );
 }
