@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../utils/app_layouts.dart';
 import '../../utils/app_style.dart';
 import '../../utils/spacer.dart';
@@ -49,27 +48,46 @@ class SearchRowView extends StatelessWidget {
         ),
         Column(
           children: [
-            Container(
-              width: size.width * 0.44,
-              height: AppLayouts.getHeight(context, 220),
-              padding: EdgeInsets.symmetric(
-                horizontal: AppLayouts.getHeight(context, 10),
-                vertical: AppLayouts.getHeight(context, 10),
-              ),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20), color: Colors.cyan),
-              child: Column(
-                children: [
-                  Text(
-                    "Discount for survey",
-                    style: AppStyles.heading1.copyWith(color: Colors.white),
+            Stack(
+              children: [
+                Container(
+                  width: size.width * 0.44,
+                  height: AppLayouts.getHeight(context, 220),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppLayouts.getHeight(context, 10),
+                    vertical: AppLayouts.getHeight(context, 10),
                   ),
-                  addVerticleSpace(5),
-                  Text(
-                      "Take the survey about our services and get discount upto 10%.",
-                      style: AppStyles.heading3.copyWith(color: Colors.white)),
-                ],
-              ),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.cyan),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Discount\nfor survey",
+                        style: AppStyles.heading1.copyWith(color: Colors.white),
+                      ),
+                      addVerticleSpace(5),
+                      Text(
+                          "Take a survey about our services and get discount  upto 10%.",
+                          style:
+                              AppStyles.heading3.copyWith(color: Colors.white)),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  right: -30,
+                  top: -40,
+                  child: Container(
+                    padding: const EdgeInsets.all(30),
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 15, color: AppStyles.bgColor),
+                      shape: BoxShape.circle,
+                      color: Colors.transparent,
+                    ),
+                  ),
+                ),
+              ],
             ),
             addVerticleSpace(10),
             Container(
@@ -83,13 +101,20 @@ class SearchRowView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     color: const Color.fromARGB(255, 235, 116, 116)),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    addVerticleSpace(
+                      AppLayouts.getHeight(context, 5),
+                    ),
                     Text("Take Love",
                         style:
                             AppStyles.heading2.copyWith(color: Colors.white)),
+                    addVerticleSpace(
+                      AppLayouts.getHeight(context, 10),
+                    ),
                     RichText(
                         text: const TextSpan(children: [
-                      TextSpan(text: ' 😍', style: TextStyle(fontSize: 30)),
+                      TextSpan(text: '😍', style: TextStyle(fontSize: 30)),
                       TextSpan(text: '🥰', style: TextStyle(fontSize: 50)),
                       TextSpan(text: '😘', style: TextStyle(fontSize: 30))
                     ]))

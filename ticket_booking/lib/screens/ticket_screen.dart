@@ -1,10 +1,14 @@
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_booking/screens/view/dot_line_view.dart';
 import 'package:ticket_booking/screens/view/two_row_clickable_view.dart';
+import 'package:ticket_booking/screens/view/two_row_view.dart';
 import 'package:ticket_booking/utils/app_layouts.dart';
 import 'package:ticket_booking/utils/app_style.dart';
 import 'package:ticket_booking/utils/spacer.dart';
 
-import '../widgets/plane_container.dart';
+import '../utils/app_data_list.dart';
+import 'view/ticket_view.dart';
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({super.key});
@@ -13,169 +17,134 @@ class TicketScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.bgColor,
-      body: ListView(
-        padding: EdgeInsets.symmetric(
-            vertical: AppLayouts.getWidth(context, 20),
-            horizontal: AppLayouts.getWidth(context, 20)),
+      body: Stack(
         children: [
-          addVerticleSpace(20),
-          Text(
-            "Tickets",
-            style: AppStyles.heading1,
-          ),
-          addVerticleSpace(20),
-          const RowClickable(row1Text: "Upcomming", row2Text: "previous"),
-          addVerticleSpace(20),
-          Column(
+          ListView(
+            padding: EdgeInsets.symmetric(
+                vertical: AppLayouts.getWidth(context, 20),
+                horizontal: AppLayouts.getWidth(context, 20)),
             children: [
+              addVerticleSpace(AppLayouts.getHeight(context, 40)),
+              Text(
+                "Tickets",
+                style: AppStyles.heading1,
+              ),
+              addVerticleSpace(AppLayouts.getHeight(context, 10)),
+              const RowClickable(row1Text: "Upcomming", row2Text: "previous"),
+              addVerticleSpace(AppLayouts.getHeight(context, 20)),
               Container(
-                padding: const EdgeInsets.all(16),
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(21),
-                        topRight: Radius.circular(21))),
+                height: AppLayouts.getHeight(context, 540),
+                width: AppLayouts.getWidth(context, 340),
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppLayouts.getWidth(context, 20),
+                ),
+                margin: EdgeInsets.symmetric(
+                  horizontal: AppLayouts.getWidth(context, 10),
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(
+                    AppLayouts.getHeight(context, 20),
+                  ),
+                ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        Text(
-                          "PNQ",
-                          style: AppStyles.blackHeading3,
-                        ),
-                        const Spacer(),
-                        const PlaneContainer(
-                          color: Colors.cyan,
-                        ),
-                        Expanded(
-                            child: Stack(
-                          children: [
-                            SizedBox(
-                              height: AppLayouts.getHeight(context, 24),
-                              child: LayoutBuilder(
-                                builder: (BuildContext context,
-                                    BoxConstraints constraints) {
-                                  return Flex(
-                                      direction: Axis.horizontal,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: List.generate(
-                                          (constraints.constrainWidth() / 6)
-                                              .floor(),
-                                          (index) => const SizedBox(
-                                                width: 3,
-                                                height: 1,
-                                                child: DecoratedBox(
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.cyan,
-                                                  ),
-                                                ),
-                                              )));
-                                },
-                              ),
-                            ),
-                            Center(
-                              child: Transform.rotate(
-                                angle: 1.5,
-                                child: const Icon(
-                                  Icons.local_airport_rounded,
-                                  color: Colors.cyan,
-                                ),
-                              ),
-                            ),
-                          ],
-                        )),
-                        const PlaneContainer(
-                          color: Colors.cyan,
-                        ),
-                        const Spacer(),
-                        Text(
-                          "BNG",
-                          style: AppStyles.blackHeading3,
-                        ),
-                      ],
+                    addVerticleSpace(AppLayouts.getHeight(context, 10)),
+                    TicketView(
+                      ticketList: ticketInfo[0],
+                      isColor: true,
+                      isPlaneColor: true,
+                      isMargin: true,
                     ),
-                    addVerticleSpace(3),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                          width: AppLayouts.getWidth(context, 100),
-                          child: Text(
-                            "Pune",
-                            style: AppStyles.blackHeading4,
-                          ),
-                        ),
-                        Text(
-                          "8H 30M",
-                          style: AppStyles.blackHeading4,
-                        ),
-                        SizedBox(
-                          width: AppLayouts.getWidth(context, 100),
-                          child: Text(
-                            "Bengluru",
-                            textAlign: TextAlign.end,
-                            style: AppStyles.blackHeading4,
-                          ),
-                        ),
-                      ],
+                    const Divider(
+                      color: Color.fromARGB(255, 106, 122, 129),
+                      thickness: 1,
                     ),
-                    //3rd card
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: const BorderRadius.only(
-                              bottomLeft: Radius.circular(21),
-                              bottomRight: Radius.circular(21))),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "19 May",
-                                style: AppStyles.blackHeading3,
-                              ),
-                              Text(
-                                "Date",
-                                style: AppStyles.blackHeading3,
-                              ),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                "08:00 AM",
-                                style: AppStyles.blackHeading3,
-                              ),
-                              Text(
-                                "Depature time",
-                                style: AppStyles.blackHeading3,
-                              ),
-                            ],
-                          ),
-                          Column(
-                            // crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                "planeNumber",
-                                style: AppStyles.blackHeading3,
-                              ),
-                              Text(
-                                "Number",
-                                style: AppStyles.blackHeading3,
-                              ),
-                            ],
-                          )
-                        ],
+                    //first tab
+
+                    addVerticleSpace(AppLayouts.getHeight(context, 3)),
+                    const TwoRowView(
+                        title1: "Flutter DB",
+                        title2: "1235468",
+                        subTitle1: "Passanger",
+                        subTitle2: "passport"),
+                    const DotLineView(
+                      isColor: true,
+                    ),
+                    //secound tab
+                    const TwoRowView(
+                        title1: "25684 12354",
+                        title2: "X12456",
+                        subTitle1: "Number of e-ticket",
+                        subTitle2: "Booking code"),
+                    const DotLineView(
+                      isColor: true,
+                    ),
+                    //third tab
+                    const TwoRowView(
+                        title1: "*** 1845",
+                        title2: '₹ 25,000',
+                        subTitle1: "Payment method",
+                        isImage: true,
+                        subTitle2: "Price"),
+                    addVerticleSpace(
+                      AppLayouts.getHeight(context, 20),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: BarcodeWidget(
+                        data: 'https://github.com/suraj-khot-19',
+                        barcode: Barcode.code128(),
+                        drawText: false,
+                        color: AppStyles.textColor,
+                        height: 80,
+                        width: double.infinity,
                       ),
+                    ),
+                    addVerticleSpace(
+                      AppLayouts.getHeight(context, 20),
                     ),
                   ],
                 ),
               ),
+              addVerticleSpace(
+                AppLayouts.getHeight(context, 50),
+              ),
+              TicketView(ticketList: ticketInfo[0]),
+              addVerticleSpace(
+                AppLayouts.getHeight(context, 20),
+              ),
             ],
-          )
+          ),
+          Positioned(
+            left: 9,
+            top: 400,
+            child: Container(
+                padding: const EdgeInsets.all(3),
+                decoration: BoxDecoration(
+                  border: Border.all(width: 2, color: AppStyles.textColor),
+                  shape: BoxShape.circle,
+                ),
+                child: CircleAvatar(
+                  maxRadius: 4,
+                  backgroundColor: AppStyles.textColor,
+                )),
+          ),
+          Positioned(
+            right: 9,
+            top: 400,
+            child: Container(
+                padding: const EdgeInsets.all(3),
+                decoration: BoxDecoration(
+                  border: Border.all(width: 2, color: AppStyles.textColor),
+                  shape: BoxShape.circle,
+                ),
+                child: CircleAvatar(
+                  maxRadius: 4,
+                  backgroundColor: AppStyles.textColor,
+                )),
+          ),
         ],
       ),
     );

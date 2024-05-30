@@ -13,7 +13,7 @@ class RowClickable extends StatelessWidget {
     final size = AppLayouts.getSize(context);
     return FittedBox(
       child: Container(
-        height: AppLayouts.getHeight(context, 50),
+        height: AppLayouts.getHeight(context, 40),
         decoration: BoxDecoration(
           borderRadius:
               BorderRadius.circular(AppLayouts.getHeight(context, 60)),

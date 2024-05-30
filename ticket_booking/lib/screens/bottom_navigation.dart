@@ -54,9 +54,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
                 activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
                 label: "Ticket"),
             BottomNavigationBarItem(
-                icon: Icon(FluentSystemIcons.ic_fluent_person_accounts_regular),
-                activeIcon:
-                    Icon(FluentSystemIcons.ic_fluent_person_accounts_filled),
+                icon: Icon(FluentSystemIcons.ic_fluent_person_regular),
+                activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
                 label: "Profile"),
           ],
         ));
