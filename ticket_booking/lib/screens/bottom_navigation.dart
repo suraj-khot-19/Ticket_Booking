@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_booking/screens/home_screen.dart';
+import 'package:ticket_booking/screens/profile_screen.dart';
 import 'package:ticket_booking/screens/search_screen.dart';
 import 'package:ticket_booking/screens/ticket_screen.dart';
 
@@ -23,7 +24,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     HomeScreen(),
     SearchScreen(),
     TicketScreen(),
-    Text("Profile"),
+    ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
