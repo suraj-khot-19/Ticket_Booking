@@ -97,7 +97,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -110,17 +110,17 @@ class ProfileScreen extends StatelessWidget {
                         color: Colors.blue,
                       ),
                     ),
-                    addHorizontalSpace(AppLayouts.getWidth(context, 10)),
+                    addHorizontalSpace(AppLayouts.getWidth(context, 5)),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "You'v got a new award",
+                          "You got a new award",
                           style:
                               AppStyles.heading2.copyWith(color: Colors.white),
                         ),
                         Text(
-                          "You'v 95 flights in a year",
+                          "You'v 80 flights in a year",
                           style: AppStyles.heading3
                               .copyWith(color: Colors.white60),
                         ),
@@ -169,7 +169,7 @@ class ProfileScreen extends StatelessWidget {
                 style: AppStyles.heading3,
               ),
               Text(
-                "11 Jun 2022",
+                "11 Jun 2024",
                 style: AppStyles.heading3,
               ),
             ],
@@ -191,7 +191,7 @@ class ProfileScreen extends StatelessWidget {
           addVerticleSpace(AppLayouts.getHeight(context, 12)),
           const TwoRowView(
               title1: "24",
-              title2: "McDonal's",
+              title2: "Rowdy's",
               subTitle1: "Miles",
               subTitle2: "recived from"),
           addVerticleSpace(AppLayouts.getHeight(context, 12)),
@@ -201,7 +201,7 @@ class ProfileScreen extends StatelessWidget {
           addVerticleSpace(AppLayouts.getHeight(context, 12)),
           const TwoRowView(
               title1: "52 304",
-              title2: "DBestech",
+              title2: "Rowdy's",
               subTitle1: "Miles",
               subTitle2: "recived from"),
           addVerticleSpace(AppLayouts.getHeight(context, 24)),

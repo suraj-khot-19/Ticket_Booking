@@ -39,8 +39,14 @@ class SearchRowView extends StatelessWidget {
                         image: AssetImage("assets/images/img2.png"))),
               ),
               addVerticleSpace(10),
+              Icon(
+                FluentSystemIcons.ic_fluent_airplane_filled,
+                color: AppStyles.primaryColor,
+                size: AppLayouts.getHeight(context, 30),
+              ),
+              addVerticleSpace(10),
               Text(
-                "Get Upto 20% discount on business class ticket from S-Ticket Airline On International Tickets",
+                "Get Upto 20% discount on business class ticket's from S-Ticket Airline's",
                 style: AppStyles.heading1.copyWith(fontSize: 24),
               ),
             ],
