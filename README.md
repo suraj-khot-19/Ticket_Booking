@@ -1,5 +1,15 @@
+<b>Ticket Booking App With Great UI</b>
+<br><br><br>
+<p> video Output:</p>
+<br><br><br>
 <table>  
-<tr><b>Ticket Booking App With Great UI</b></tr>
+<tr>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/tb.gif" alt="vid"></td></tr>
+</table>
+<br><br><br>
+<p>Iamge Outputs:</p>
+<br><br><br>
+<table>
   <tr>
   <td><img src="https://github.com/suraj-khot-19/img/blob/main/tb2.jpg" alt="img"></td>
   <td><img src="https://github.com/suraj-khot-19/img/blob/main/tb5.jpg" alt="img"></td>
