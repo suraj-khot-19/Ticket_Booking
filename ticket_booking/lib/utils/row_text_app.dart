@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
-
-import 'app_style.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class AppRowText extends StatelessWidget {
   final String text1, text2;
-  const AppRowText({required this.text1, required this.text2, super.key});
+  final Widget widget;
+  const AppRowText(
+      {required this.text1,
+      required this.widget,
+      required this.text2,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,9 @@ class AppRowText extends StatelessWidget {
         ),
         InkWell(
           onTap: () {
-            //function
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return widget;
+            }));
           },
           child: Text(
             text2,

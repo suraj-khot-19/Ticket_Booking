@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../utils/app_layouts.dart';
-import '../../utils/app_style.dart';
-import '../../utils/spacer.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class SearchRowView extends StatelessWidget {
   const SearchRowView({super.key});
@@ -17,30 +14,33 @@ class SearchRowView extends StatelessWidget {
             horizontal: AppLayouts.getHeight(context, 10),
             vertical: AppLayouts.getWidth(context, 10),
           ),
-          height: AppLayouts.getHeight(context, 435),
+          height: AppLayouts.getHeight(context, 500),
           width: size.width * 0.42,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.white,
-          ),
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+              boxShadow: const [BoxShadow(color: Colors.grey, blurRadius: 4)]),
           child: Column(
             children: [
               Container(
                 width: size.width * 0.35,
-                height: 170,
+                height: 180,
                 padding: EdgeInsets.symmetric(
                   horizontal: AppLayouts.getHeight(context, 10),
                   vertical: AppLayouts.getHeight(context, 10),
                 ),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
+                    boxShadow: const [
+                      BoxShadow(color: Colors.black, blurRadius: 2)
+                    ],
                     image: const DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage("assets/images/img2.png"))),
               ),
               addVerticleSpace(10),
               Text(
-                "20% discount on business class ticket from Airline On International",
+                "Get Upto 20% discount on business class ticket from S-Ticket Airline On International Tickets",
                 style: AppStyles.heading1.copyWith(fontSize: 24),
               ),
             ],
@@ -52,26 +52,29 @@ class SearchRowView extends StatelessWidget {
               children: [
                 Container(
                   width: size.width * 0.44,
-                  height: AppLayouts.getHeight(context, 220),
+                  height: AppLayouts.getHeight(context, 275),
                   padding: EdgeInsets.symmetric(
                     horizontal: AppLayouts.getHeight(context, 10),
                     vertical: AppLayouts.getHeight(context, 10),
                   ),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.cyan),
+                      color: Colors.cyan,
+                      boxShadow: const [
+                        BoxShadow(color: Colors.grey, blurRadius: 4)
+                      ]),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Discount\nfor survey",
+                        "Discount \nfor survey",
                         style: AppStyles.heading1.copyWith(color: Colors.white),
                       ),
                       addVerticleSpace(5),
                       Text(
-                          "Take a survey about our services and get discount  upto 10%.",
-                          style:
-                              AppStyles.heading3.copyWith(color: Colors.white)),
+                          "Take a survey about our services and get discount upto 10%.",
+                          style: AppStyles.heading2
+                              .copyWith(color: Colors.white70)),
                     ],
                   ),
                 ),
@@ -89,17 +92,20 @@ class SearchRowView extends StatelessWidget {
                 ),
               ],
             ),
-            addVerticleSpace(10),
+            addVerticleSpace(20),
             Container(
                 width: size.width * 0.44,
                 padding: EdgeInsets.symmetric(
                   horizontal: AppLayouts.getHeight(context, 10),
                   vertical: AppLayouts.getHeight(context, 10),
                 ),
-                height: AppLayouts.getHeight(context, 205),
+                height: AppLayouts.getHeight(context, 200),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: const Color.fromARGB(255, 235, 116, 116)),
+                    color: const Color.fromARGB(255, 235, 116, 116),
+                    boxShadow: const [
+                      BoxShadow(color: Colors.grey, blurRadius: 4)
+                    ]),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [

@@ -1,13 +1,5 @@
-import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/material.dart';
-import 'package:ticket_booking/screens/view/hotel_view.dart';
-import 'package:ticket_booking/screens/view/ticket_view.dart';
-import 'package:ticket_booking/utils/app_data_list.dart';
-import 'package:ticket_booking/utils/app_style.dart';
-import 'package:ticket_booking/utils/row_text_app.dart';
-import 'package:ticket_booking/utils/spacer.dart';
-
-import '../utils/app_layouts.dart';
+import 'package:ticket_booking/screens/ticket_view_all_screen.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -77,7 +69,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 addVerticleSpace(40),
-                const AppRowText(text1: 'Upcoming Flights', text2: 'View all'),
+                const AppRowText(
+                  text1: 'Upcoming Flights',
+                  text2: 'View all',
+                  widget: TicketViewAll(),
+                ),
               ],
             ),
           ),
@@ -86,19 +82,28 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10),
             scrollDirection: Axis.horizontal,
             child: Row(
-              children:
-                  ticketInfo.map((e) => TicketView(ticketList: e)).toList(),
+              children: ticketInfo
+                  .take(3)
+                  .map((e) => TicketView(ticketList: e))
+                  .toList(),
             ),
           ),
           Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: const AppRowText(text1: 'Hotels', text2: 'View all')),
+              child: const AppRowText(
+                text1: 'Hotels',
+                text2: 'View all',
+                widget: HotelViewAll(),
+              )),
           addVerticleSpace(15),
           SingleChildScrollView(
             padding: const EdgeInsets.only(left: 10),
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: hotelInfo.map((e) => HotelView(hotelList: e)).toList(),
+              children: hotelInfo
+                  .take(3)
+                  .map((e) => HotelView(hotelList: e))
+                  .toList(),
             ),
           ),
           addVerticleSpace(40),

@@ -1,9 +1,4 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
-import 'package:ticket_booking/screens/bottom_navigation.dart';
-import 'package:ticket_booking/utils/app_layouts.dart';
-import 'package:ticket_booking/utils/app_style.dart';
-import 'package:ticket_booking/utils/spacer.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -33,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.forward();
 
-    Timer(const Duration(seconds: 15), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const BottomNavigation()),
       );
@@ -49,9 +44,8 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppStyles.bgColor, // LinkedIn's blue color
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      backgroundColor: AppStyles.bgColor,
+      body: Stack(
         children: [
           Center(
             child: ScaleTransition(
@@ -68,15 +62,14 @@ class _SplashScreenState extends State<SplashScreen>
               ),
             ),
           ),
-          addVerticleSpace(AppLayouts.getHeight(context, 100)),
-          Text(
-            "S-Ticket",
-            style: AppStyles.blackHeading3,
-          ),
-          addVerticleSpace(AppLayouts.getHeight(context, 20)),
-          const Center(
-            child: CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.grey),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 20.0),
+              child: Text(
+                "S-Ticket",
+                style: AppStyles.heading2.copyWith(color: Colors.black),
+              ),
             ),
           ),
         ],

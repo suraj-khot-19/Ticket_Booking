@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class AppLayouts {
   static getSize(BuildContext context) {

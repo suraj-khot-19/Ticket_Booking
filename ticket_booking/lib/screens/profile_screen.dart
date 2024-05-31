@@ -1,9 +1,6 @@
-import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:ticket_booking/screens/view/two_row_view.dart';
-import 'package:ticket_booking/utils/app_layouts.dart';
 import 'package:ticket_booking/utils/app_style.dart';
-import 'package:ticket_booking/utils/spacer.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -25,11 +22,11 @@ class ProfileScreen extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.all(8),
-                height: 100,
-                width: 100,
+                height: 80,
+                width: 80,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
+                  color: Colors.transparent,
                 ),
                 child: Container(
                   decoration: const BoxDecoration(
@@ -45,13 +42,13 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   Text(
                     "Book Tickets",
-                    style: AppStyles.heading1,
+                    style: AppStyles.heading2,
                   ),
                   Text(
                     "Pune",
                     style: AppStyles.heading3,
                   ),
-                  addVerticleSpace(AppLayouts.getHeight(context, 10)),
+                  addVerticleSpace(AppLayouts.getHeight(context, 2)),
                   Container(
                     padding: EdgeInsets.symmetric(
                         horizontal: AppLayouts.getWidth(context, 10),
@@ -61,15 +58,15 @@ class ProfileScreen extends StatelessWidget {
                         color: Colors.white),
                     child: Row(
                       children: [
-                        Icon(
+                        const Icon(
                           FluentSystemIcons.ic_fluent_shield_regular,
-                          color: AppStyles.primaryColor,
+                          color: Color(0xffad9c00),
                         ),
                         addHorizontalSpace(AppLayouts.getHeight(context, 10)),
                         const Text(
                           "Premium staus",
                           style: TextStyle(
-                              color: Colors.blue,
+                              color: Color(0xffad9c00),
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
                         ),
@@ -86,22 +83,28 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
           addVerticleSpace(AppLayouts.getHeight(context, 50)),
-          Container(
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-                color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-            child: Stack(
-              children: [
-                Row(
+          Stack(
+            children: [
+              Container(
+                height: AppLayouts.getHeight(context, 90),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: AppStyles.primaryColor,
+                    borderRadius: BorderRadius.circular(
+                        AppLayouts.getWidth(context, 20))),
+              ),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(40)),
-                      child: const Icon(
+                    const CircleAvatar(
+                      backgroundColor: Colors.white,
+                      maxRadius: 25,
+                      child: Icon(
                         FluentSystemIcons.ic_fluent_lightbulb_filament_filled,
-                        size: 40,
+                        size: 27,
                         color: Colors.blue,
                       ),
                     ),
@@ -123,20 +126,23 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                Positioned(
-                  right: -45,
-                  top: -45,
-                  child: Container(
-                    padding: const EdgeInsets.all(30),
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 15, color: Colors.white),
-                      shape: BoxShape.circle,
-                      color: Colors.transparent,
+              ),
+              Positioned(
+                right: -45,
+                top: -40,
+                child: Container(
+                  padding: const EdgeInsets.all(30),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 18,
+                      color: AppStyles.bgColor,
                     ),
+                    shape: BoxShape.circle,
+                    color: Colors.transparent,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           addVerticleSpace(AppLayouts.getHeight(context, 30)),
           Text(
@@ -166,12 +172,17 @@ class ProfileScreen extends StatelessWidget {
               ),
             ],
           ),
-          addVerticleSpace(AppLayouts.getHeight(context, 12)),
+          addVerticleSpace(AppLayouts.getHeight(context, 4)),
+          Divider(
+            color: Colors.grey.shade400,
+          ),
+          addVerticleSpace(AppLayouts.getHeight(context, 4)),
           const TwoRowView(
               title1: "23 042",
               title2: "Airline CO",
               subTitle1: "Miles",
               subTitle2: "recived from"),
+          addVerticleSpace(AppLayouts.getHeight(context, 12)),
           addVerticleSpace(AppLayouts.getHeight(context, 12)),
           const TwoRowView(
               title1: "24",

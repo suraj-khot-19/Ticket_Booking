@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:ticket_booking/utils/app_layouts.dart';
-import 'package:ticket_booking/utils/app_style.dart';
-import 'package:ticket_booking/utils/spacer.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class HotelView extends StatelessWidget {
   final Map<String, dynamic> hotelList;
-  const HotelView({required this.hotelList, super.key});
+  final bool? isWidth;
+  const HotelView({required this.hotelList, this.isWidth, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +11,13 @@ class HotelView extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(right: 17, top: 5),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 17),
-      width: size.width * 0.6,
-      height: AppLayouts.getHeight(context, 330),
+      width: isWidth == null ? size.width * 0.6 : size.width,
+      height: AppLayouts.getHeight(context, isWidth == null ? 330 : 450),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.shade200,
+              color: isWidth == null ? Colors.grey.shade200 : AppStyles.bgColor,
               blurRadius: 20,
               spreadRadius: 2,
             ),
@@ -29,7 +27,7 @@ class HotelView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: AppLayouts.getHeight(context, 180),
+            height: AppLayouts.getHeight(context, isWidth == null ? 180 : 300),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 image: DecorationImage(

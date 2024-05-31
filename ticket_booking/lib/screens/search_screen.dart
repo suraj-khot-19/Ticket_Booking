@@ -1,12 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:ticket_booking/screens/view/two_row_clickable_view.dart';
-import 'package:ticket_booking/utils/app_icon_file.dart';
-import 'package:ticket_booking/utils/app_layouts.dart';
-import 'package:ticket_booking/utils/app_style.dart';
-import 'package:ticket_booking/utils/spacer.dart';
-
-import '../utils/row_text_app.dart';
-import 'view/search_row_view.dart';
+import 'package:ticket_booking/screens/ticket_view_all_screen.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -55,6 +48,7 @@ class SearchScreen extends StatelessWidget {
           const AppRowText(
             text1: 'Upcoming Flights',
             text2: 'View all',
+            widget: TicketViewAll(),
           ),
           addVerticleSpace(
             AppLayouts.getHeight(context, 20),

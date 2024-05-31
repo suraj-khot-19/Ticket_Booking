@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:ticket_booking/utils/app_style.dart';
-
-import 'app_layouts.dart';
-import 'spacer.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class AppIconFile extends StatelessWidget {
   final IconData icon;

@@ -24,6 +24,24 @@ List<Map<String, dynamic>> hotelInfo = [
     'price': 25,
     'image': 'hotel4.png',
   },
+  {
+    'name': 'Hotel Sita',
+    'city': 'Pune',
+    'price': 50,
+    'image': 'hotel5.png',
+  },
+  {
+    'name': 'Hotel Sita',
+    'city': 'Kolhapur',
+    'price': 70,
+    'image': 'hotel6.png',
+  },
+  {
+    'name': 'Hotel Sita',
+    'city': 'Kolhapur',
+    'price': 19,
+    'image': 'hotel7.png',
+  },
 ];
 //ticket view
 List<Map<String, dynamic>> ticketInfo = [
@@ -96,5 +114,61 @@ List<Map<String, dynamic>> ticketInfo = [
     "date": "28 May",
     "time": "19:50 PM",
     "planeNumber": 19,
+  },
+  {
+    'from': {
+      'code': "DEL",
+      'place': "Delhi",
+    },
+    'to': {
+      'code': "BOM",
+      'place': "Mumbai",
+    },
+    "duration": "2H 10M",
+    "date": "16 May",
+    "time": "09:00 PM",
+    "planeNumber": 7,
+  },
+  {
+    'from': {
+      'code': "DEL",
+      'place': "Delhi",
+    },
+    'to': {
+      'code': "BOM",
+      'place': "Mumbai",
+    },
+    "duration": "2H 10M",
+    "date": "16 May",
+    "time": "09:00 PM",
+    "planeNumber": 7,
+  },
+  {
+    'from': {
+      'code': "DEL",
+      'place': "Delhi",
+    },
+    'to': {
+      'code': "BOM",
+      'place': "Mumbai",
+    },
+    "duration": "2H 10M",
+    "date": "16 May",
+    "time": "09:00 PM",
+    "planeNumber": 7,
+  },
+  {
+    'from': {
+      'code': "DEL",
+      'place': "Delhi",
+    },
+    'to': {
+      'code': "BOM",
+      'place': "Mumbai",
+    },
+    "duration": "2H 10M",
+    "date": "16 May",
+    "time": "09:00 PM",
+    "planeNumber": 7,
   },
 ];

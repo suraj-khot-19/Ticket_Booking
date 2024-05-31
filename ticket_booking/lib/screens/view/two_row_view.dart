@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../utils/app_style.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class TwoRowView extends StatelessWidget {
   final String title1, title2, subTitle1, subTitle2;

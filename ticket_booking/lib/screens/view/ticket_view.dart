@@ -1,19 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:ticket_booking/screens/view/dot_line_view.dart';
-import 'package:ticket_booking/utils/app_layouts.dart';
-import 'package:ticket_booking/utils/app_style.dart';
-import 'package:ticket_booking/utils/spacer.dart';
-
-import '../../widgets/plane_container.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticketList;
   final bool? isColor;
   final bool? isMargin;
   final bool? isPlaneColor;
+  final bool? isWidth;
   const TicketView(
       {required this.ticketList,
       this.isMargin,
+      this.isWidth,
       this.isColor,
       this.isPlaneColor,
       super.key});
@@ -22,7 +18,7 @@ class TicketView extends StatelessWidget {
     final size = AppLayouts.getSize(context);
 
     return SizedBox(
-      width: size.width * 0.80, //80% of width
+      width: isWidth == null ? size.width * 0.80 : size.width, //80% of width
       height: AppLayouts.getHeight(
           context, isMargin == null ? 180 : 140), //main height for card
       child: Container(

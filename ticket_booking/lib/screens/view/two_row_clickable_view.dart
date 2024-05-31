@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../utils/app_layouts.dart';
-import '../../utils/app_style.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class RowClickable extends StatelessWidget {
   final String row1Text, row2Text;

@@ -1,14 +1,4 @@
-import 'package:barcode_widget/barcode_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:ticket_booking/screens/view/dot_line_view.dart';
-import 'package:ticket_booking/screens/view/two_row_clickable_view.dart';
-import 'package:ticket_booking/screens/view/two_row_view.dart';
-import 'package:ticket_booking/utils/app_layouts.dart';
-import 'package:ticket_booking/utils/app_style.dart';
-import 'package:ticket_booking/utils/spacer.dart';
-
-import '../utils/app_data_list.dart';
-import 'view/ticket_view.dart';
+import 'package:ticket_booking/utils/exports.dart';
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({super.key});
