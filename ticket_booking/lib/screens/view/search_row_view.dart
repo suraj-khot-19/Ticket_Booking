@@ -74,7 +74,7 @@ class SearchRowView extends StatelessWidget {
                       Text(
                           "Take a survey about our services and get discount upto 10%.",
                           style: AppStyles.heading2
-                              .copyWith(color: Colors.white70)),
+                              .copyWith(color: Colors.grey.shade800)),
                     ],
                   ),
                 ),

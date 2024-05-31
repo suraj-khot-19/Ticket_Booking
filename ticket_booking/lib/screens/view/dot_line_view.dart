@@ -8,29 +8,24 @@ class DotLineView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          return Flex(
-            direction: Axis.horizontal,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.max,
-            children: List.generate(
-                (constraints.constrainWidth() / 15).floor(),
-                (index) => SizedBox(
-                      height: AppLayouts.getHeight(context, 5),
-                      width: AppLayouts.getWidth(context, 1),
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                            color:
-                                isColor == null ? Colors.white : Colors.grey),
-                      ),
-                    )),
-          );
-        },
-      ),
-    ));
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        return Flex(
+          direction: Axis.horizontal,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
+          children: List.generate(
+              (constraints.constrainWidth() / 15).floor(),
+              (index) => SizedBox(
+                    height: AppLayouts.getHeight(context, 5),
+                    width: AppLayouts.getWidth(context, 1),
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                          color: isColor == null ? Colors.white : Colors.grey),
+                    ),
+                  )),
+        );
+      },
+    );
   }
 }

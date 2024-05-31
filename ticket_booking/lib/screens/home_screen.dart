@@ -1,8 +1,29 @@
 import 'package:ticket_booking/screens/ticket_view_all_screen.dart';
 import 'package:ticket_booking/utils/exports.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    updateMessage();
+  }
+
+  String updateMessage() {
+    if (DateTime.now().hour < 12) {
+      return "Good Morning";
+    } else if (DateTime.now().hour < 17) {
+      return "Good Afternoon";
+    } else {
+      return "Good Evening";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Good morning",
+                          updateMessage(),
                           style: AppStyles.heading3,
                         ),
                         Text(
@@ -47,25 +68,33 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 addVerticleSpace(25),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 12,
-                  ),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xFFF4F6FD)),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        FluentSystemIcons.ic_fluent_search_regular,
-                        color: Color(0xFFBFC205),
-                      ),
-                      Text(
-                        "Search",
-                        style: AppStyles.heading4,
-                      ),
-                    ],
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const TicketViewAll();
+                    }));
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 12,
+                    ),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color(0xFFF4F6FD)),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          FluentSystemIcons.ic_fluent_search_regular,
+                          color: Color(0xFFBFC205),
+                        ),
+                        Text(
+                          "Search",
+                          style: AppStyles.heading4,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 addVerticleSpace(40),

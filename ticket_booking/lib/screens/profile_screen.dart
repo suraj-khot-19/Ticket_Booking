@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:ticket_booking/utils/app_style.dart';
 import 'package:ticket_booking/utils/exports.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -11,12 +9,15 @@ class ProfileScreen extends StatelessWidget {
       backgroundColor: AppStyles.bgColor,
       body: ListView(
         padding: EdgeInsets.symmetric(
-            horizontal: AppLayouts.getHeight(context, 25),
-            vertical: AppLayouts.getWidth(context, 10)),
+            horizontal: AppLayouts.getHeight(context, 30),
+            vertical: AppLayouts.getWidth(context, 16)),
         children: [
-          addVerticleSpace(
-            AppLayouts.getHeight(context, 70),
+          addVerticleSpace(AppLayouts.getHeight(context, 40)),
+          Text(
+            "Profile",
+            style: AppStyles.heading1,
           ),
+          addVerticleSpace(AppLayouts.getHeight(context, 20)),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -46,7 +47,8 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   Text(
                     "Pune",
-                    style: AppStyles.heading3,
+                    style: AppStyles.heading3
+                        .copyWith(color: Colors.grey.shade800),
                   ),
                   addVerticleSpace(AppLayouts.getHeight(context, 2)),
                   Container(
@@ -78,7 +80,7 @@ class ProfileScreen extends StatelessWidget {
               const Spacer(),
               Text(
                 "Edit",
-                style: AppStyles.heading2.copyWith(color: Colors.grey.shade500),
+                style: AppStyles.heading3.copyWith(color: Colors.grey.shade700),
               ),
             ],
           ),
@@ -108,7 +110,7 @@ class ProfileScreen extends StatelessWidget {
                         color: Colors.blue,
                       ),
                     ),
-                    addHorizontalSpace(AppLayouts.getWidth(context, 20)),
+                    addHorizontalSpace(AppLayouts.getWidth(context, 10)),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -183,6 +185,9 @@ class ProfileScreen extends StatelessWidget {
               subTitle1: "Miles",
               subTitle2: "recived from"),
           addVerticleSpace(AppLayouts.getHeight(context, 12)),
+          const DotLineView(
+            isColor: true,
+          ),
           addVerticleSpace(AppLayouts.getHeight(context, 12)),
           const TwoRowView(
               title1: "24",
@@ -190,18 +195,27 @@ class ProfileScreen extends StatelessWidget {
               subTitle1: "Miles",
               subTitle2: "recived from"),
           addVerticleSpace(AppLayouts.getHeight(context, 12)),
+          const DotLineView(
+            isColor: true,
+          ),
+          addVerticleSpace(AppLayouts.getHeight(context, 12)),
           const TwoRowView(
               title1: "52 304",
               title2: "DBestech",
               subTitle1: "Miles",
               subTitle2: "recived from"),
-          addVerticleSpace(AppLayouts.getHeight(context, 30)),
-          Align(
-            alignment: Alignment.center,
-            child: Text(
-              "How to get more miles",
-              style: AppStyles.heading3.copyWith(
-                color: Colors.blue,
+          addVerticleSpace(AppLayouts.getHeight(context, 24)),
+          InkWell(
+            onTap: () {
+              //need to add
+            },
+            child: Align(
+              alignment: Alignment.center,
+              child: Text(
+                "How to get more miles",
+                style: AppStyles.heading3.copyWith(
+                  color: Colors.blue,
+                ),
               ),
             ),
           ),

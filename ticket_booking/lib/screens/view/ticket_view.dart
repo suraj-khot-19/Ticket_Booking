@@ -159,8 +159,16 @@ class TicketView extends StatelessWidget {
                     ),
                   ),
 
-                  DotLineView(
-                    isColor: isColor,
+                  // DotLineView(
+                  //   isColor: isColor,
+                  // ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: DotLineView(
+                        isColor: isColor,
+                      ),
+                    ),
                   ),
                   //right
                   SizedBox(

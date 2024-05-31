@@ -59,8 +59,16 @@ class TicketScreen extends StatelessWidget {
                         title2: "1235468",
                         subTitle1: "Passanger",
                         subTitle2: "passport"),
-                    const DotLineView(
-                      isColor: true,
+                    // const DotLineView(
+                    //   isColor: true,
+                    // ),
+                    const Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: DotLineView(
+                          isColor: true,
+                        ),
+                      ),
                     ),
                     //secound tab
                     const TwoRowView(
@@ -68,8 +76,16 @@ class TicketScreen extends StatelessWidget {
                         title2: "X12456",
                         subTitle1: "Number of e-ticket",
                         subTitle2: "Booking code"),
-                    const DotLineView(
-                      isColor: true,
+                    // const DotLineView(
+                    //   isColor: true,
+                    // ),
+                    const Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: DotLineView(
+                          isColor: true,
+                        ),
+                      ),
                     ),
                     //third tab
                     const TwoRowView(
