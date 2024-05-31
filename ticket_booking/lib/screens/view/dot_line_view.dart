@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../utils/app_layouts.dart';
 
 class DotLineView extends StatelessWidget {
