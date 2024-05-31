@@ -44,10 +44,10 @@ class SearchRowView extends StatelessWidget {
                 color: AppStyles.primaryColor,
                 size: AppLayouts.getHeight(context, 30),
               ),
-              addVerticleSpace(10),
+              addVerticleSpace(5),
               Text(
-                "Get Upto 20% discount on business class ticket's from S-Ticket Airline's",
-                style: AppStyles.heading1.copyWith(fontSize: 24),
+                "Get 20% discount on business class ticket's from S-Ticket Airline's",
+                style: AppStyles.heading1.copyWith(fontSize: 22),
               ),
             ],
           ),
