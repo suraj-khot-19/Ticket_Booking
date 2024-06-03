@@ -7,7 +7,7 @@
   <td><img src="https://github.com/suraj-khot-19/img/blob/main/tb.gif" alt="vid"></td></tr>
 </table>
 <br><br><br>
-<p>Iamge Outputs:</p>
+<p>Image Outputs:</p>
 <br><br><br>
 <table>
   <tr>
